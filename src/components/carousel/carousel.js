@@ -24,7 +24,7 @@ const Carousel = () => {
         <div className="carousel-item">
           <img className="d-block w-100" src={img2} alt="Second slide"/>
           <div className="carousel-caption d-none d-md-block">
-            <a className="imgTags">
+            <a className="imgTags" href="">
               <span style={{display:'inline-block', padding:'2px 3px'}}>Photo by Ishan @seefromthesky on Unsplash</span>
             </a>
           </div>
