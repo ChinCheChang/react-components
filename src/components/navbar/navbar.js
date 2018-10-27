@@ -5,7 +5,7 @@ import './navbar.css';
 const Navbar = ({onRouteChange}) => {
   return (
     <nav className="justify-content-between navbar fixed-top navbar-expand-lg o-80 shadow-2 navbar-light bg-light" style={{ 'backgroundColor':'#e3f2fd'}}>
-      <a className="navbar-brand grow" href="#">
+      <a onClick={() => onRouteChange('main')} className="navbar-brand grow" href="#">
         <FontAwesomeIcon icon="ghost" />
         <span className="ma2">ChinChe</span>
       </a>
