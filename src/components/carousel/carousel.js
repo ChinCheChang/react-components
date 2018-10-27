@@ -14,7 +14,7 @@ const Carousel = () => {
       </ol>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img className="d-block w-100" src={img1} alt="First slide"/>
+          <img id="img1" className="d-block w-100" src={img1} alt="First slide"/>
           <div className="carousel-caption d-none d-md-block">
             <a className="imgTags" href="https://unsplash.com/@oldskoolphotography?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge">
               <span style={{display:'inline-block', padding:'2px 3px'}}>Photo by oldskool photography on Unsplash</span>
@@ -22,7 +22,7 @@ const Carousel = () => {
           </div>
         </div>
         <div className="carousel-item">
-          <img className="d-block w-100" src={img2} alt="Second slide"/>
+          <img id="img2" className="d-block w-100" src={img2} alt="Second slide"/>
           <div className="carousel-caption d-none d-md-block">
             <a className="imgTags" href="">
               <span style={{display:'inline-block', padding:'2px 3px'}}>Photo by Ishan @seefromthesky on Unsplash</span>
@@ -30,7 +30,7 @@ const Carousel = () => {
           </div>
         </div>
         <div className="carousel-item">
-          <img className="d-block w-100" src={img3} alt="Third slide"/>
+          <img id="img3" className="d-block w-100" src={img3} alt="Third slide"/>
           <div className="carousel-caption d-none d-md-block">
             <a className="imgTags" href="">
               <span style={{display:'inline-block', padding:'2px 3px'}}>Photo by Wei-Cheng Wu on Unsplash</span>

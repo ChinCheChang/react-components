@@ -1,3 +1,8 @@
 import {
-  CHANGE_VIEWPORT_STATE
+  CHANGE_ROUTE
 } from './constants.js';
+
+export const setRoute = (toWhere) => ({
+  type: CHANGE_ROUTE,
+  payload: toWhere
+})
