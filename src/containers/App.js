@@ -5,10 +5,11 @@ import { connect } from 'react-redux';
 
 import './App.css';
 import Navbar from '../components/navbar/navbar';
-import Carousel from '../components/carousel/carousel';
 import ParallaxScrolling from '../components/parallaxScrolling/parallaxScrolling';
 import Signin from './signin/signin';
 import Signup from './signup/signup';
+import Footer from '../components/footer/footer'
+
 import { setRoute } from '../actions/routeActions';
 
 library.add(faGhost)
@@ -34,7 +35,6 @@ class App extends Component {
       var s = today.getSeconds();
       m = checkTime(m);
       s = checkTime(s);
-      console.log(today);
       document.getElementById('clock').innerHTML =
       h + ":" + m + ":" + s;
       var t = setTimeout(startTime, 500);
@@ -64,7 +64,7 @@ class App extends Component {
           })()
         }
       <ParallaxScrolling />
-      {/* <Carousel/> */}
+      <Footer />
       </div>
     );
   }
