@@ -3,6 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './navbar.css';
 
 const Navbar = ({onRouteChange}) => {
+  const onSignClick = (text) => {
+    var toggler = document.getElementsByClassName('collapse')[0];
+    toggler.classList.remove("show");
+    onRouteChange(text);
+  }
   return (
     <nav className="justify-content-between navbar fixed-top navbar-expand-lg o-80 shadow-2 navbar-light bg-light" style={{ 'backgroundColor':'#e3f2fd'}}>
       <a onClick={() => onRouteChange('main')} className="navbar-brand grow" href="#">
@@ -17,10 +22,10 @@ const Navbar = ({onRouteChange}) => {
           <li className="nav-item">
             <a className="nav-link" href="#">Demo</a>
           </li>
-          <li onClick={() => onRouteChange('signin')} className="nav-item mobile">
+          <li onClick={() => onSignClick('signin')} className="nav-item mobile">
             <a className="nav-link" href="#">Sign In</a>
           </li>
-          <li onClick={() => onRouteChange('signup')} className="nav-item mobile">
+          <li onClick={() => onSignClick('signup')} className="nav-item mobile">
             <a className="nav-link" href="#">Sign Up</a>
           </li>
         </ul>
