@@ -1,0 +1,37 @@
+.parallax {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.parallax-img {
+  position: absolute;
+  /* The image used */
+  background-image: url("daniel-olah-1121508-unsplash.jpg");
+
+  /* Set a specific height */
+  height: 100%;
+  width: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  opacity: 0.8;
+  z-index: -1;
+}
+
+#photoby {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+
+#clock {
+  position: absolute;
+  font-size: 5em;
+  color: white;
+}
