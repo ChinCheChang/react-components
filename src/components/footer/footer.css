@@ -1,10 +1,19 @@
 footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   color: white;
-  font-size: .8rem;
+  font-size: 1rem;
   height: 10em;
   background-color: #343a40;
-  /* #212529 */
+}
+
+.imgme {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.footer-content {
+  width: 20em;
 }
