@@ -2,8 +2,6 @@ import React from 'react';
 import './coverBackground.css';
 
 const CoverBackground = (props) => {
-  console.log(props);
-
   return(
     <div onClick={(e) => e.target === document.getElementById('myModal')
       ? props.onRouteChange('main')
