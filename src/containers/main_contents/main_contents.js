@@ -18,10 +18,8 @@ class MainContents extends Component{
 
   render() {
     return (
-      <div>
-        <Sidenav sidenav={this.state.sidenav} onIconClick={this.onIconClick}/>
-        <div className="container-fluid">
-        </div>
+      <div className="container-fluid">
+        <Sidenav sidenav={this.state.sidenav} onIconClick={this.onIconClick}/>        
       </div>
     );
   }

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './App.css';
 import Navbar from '../components/navbar/navbar';
 import ParallaxScrolling from '../components/parallaxScrolling/parallaxScrolling';
+import CoverBackground from '../components/coverBackground/coverBackground';
 import Footer from '../components/footer/footer';
 import Signin from './signin/signin';
 import Signup from './signup/signup';
@@ -52,9 +53,17 @@ class App extends Component {
           (() => {
             switch (route) {
               case "signin":
-                return <Signin onRouteChange={onRouteChange}/>;
+                return (
+                  <CoverBackground onRouteChange={onRouteChange}>
+                    <Signin onRouteChange={onRouteChange}/>
+                  </CoverBackground>
+                );
               case "signup":
-                return <Signup onRouteChange={onRouteChange}/>;
+                return  (
+                  <CoverBackground onRouteChange={onRouteChange}>
+                    <Signup onRouteChange={onRouteChange}/>
+                  </CoverBackground>
+                );
               default:
                 break;
             }
