@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './main_contents.css'
 
-const initialState = {};
+const initialState = {
+  sidenav: "right"
+};
 
 class MainContents extends Component{
   constructor(props) {
@@ -10,13 +12,24 @@ class MainContents extends Component{
   }
 
   openNav = () => {
-    document.getElementById("mySidenav").style.width = "175px";
-    document.getElementById("main").style.marginLeft = "175px";
+
   }
 
-  closeNav = () => {
-    document.getElementById("mySidenav").style.width = "10px";
-    document.getElementById("main").style.marginLeft= "0px";
+  Sidenav = () => {
+    console.log(this.state.sidenav);
+    if (this.state.sidenav === 'right') {
+      document.getElementById("mySidenav").style.width = "175px";
+      document.getElementById("main").style.marginLeft = "175px";
+      document.getElementsByClassName("closebtn")[0].classList.add("revers-rotate");
+      document.getElementsByClassName("closebtn")[0].classList.remove("rotate");
+      this.setState({sidenav: "left"})
+    } else {
+      document.getElementById("mySidenav").style.width = "5px";
+      document.getElementById("main").style.marginLeft= "5px";
+      document.getElementsByClassName("closebtn")[0].classList.add("rotate");
+      document.getElementsByClassName("closebtn")[0].classList.remove("revers-rotate");
+      this.setState({sidenav: "right"})
+    }
   }
 
   render() {
@@ -30,10 +43,13 @@ class MainContents extends Component{
         </div>
         <div id="main">
           <div className="closeside">
-            <a className="shadow-5 closebtn" onClick={this.closeNav}>&times;</a>
+            <div className="closeContainer br--right shadow-5">
+              <i className="fas fa-angle-left rotate closebtn" onClick={this.Sidenav}></i>
+            </div>
           </div>
-          <i className="fas fa-chevron-circle-right"></i>
-          <span style={{cursor:"pointer"}} onClick={this.openNav}>&#9776; open</span>
+        </div>
+        <div className="container-fluid">
+
         </div>
       </div>
     );

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="container-fluid">
-        made by ChinChe, Chang      
+        Made by ChinChe, Chang      
       </div>
     </footer>
   );
