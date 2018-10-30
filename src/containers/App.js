@@ -8,47 +8,42 @@ import Footer from '../components/footer/footer';
 import Signin from './signin/signin';
 import Signup from './signup/signup';
 import MainContents from './main_contents/main_contents'
-import { setRoute } from '../actions/routeActions';
+import { setRoute, setTime } from '../actions/actions';
+import { time2String, checkTime } from '../functions/time';
 
 const mapStateToProps = (state) => {
   return {
-    route: state.route.route
+    route: state.route.route,
+    now: state.time.now
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onRouteChange: (toWhere) => dispatch(setRoute(toWhere))
+    onRouteChange: (toWhere) => dispatch(setRoute(toWhere)),
+    onTimeChange: (today) => dispatch(setTime(today))
   }
 }
 
 class App extends Component {
   componentDidMount() {
-    //where to add clock
-    var clocklist = document.getElementById('clock');
+    const { onTimeChange } = this.props;
+    var clock = document.getElementById('clock');
+
     const startTime = () => {
       var today = new Date();
-      var h = today.getHours();
-      var m = today.getMinutes();
-      var s = today.getSeconds();
-      m = checkTime(m);
-      s = checkTime(s);
-      clocklist.innerHTML =
-      h + ":" + m + ":" + s;
+      onTimeChange(today);
+      clock.innerHTML = time2String(today);
       setTimeout(startTime, 500)
     }
-    const checkTime = (i) => {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-        return i;
-    }    
     startTime();
   }
 
   render() {
-    const { route, onRouteChange } = this.props;
+    const { route, onRouteChange, now } = this.props;
     return (
       <div className="App">
-        <Navbar onRouteChange={onRouteChange}/>
+        <Navbar now={now} onRouteChange={onRouteChange}/>
         {
           (() => {
             switch (route) {

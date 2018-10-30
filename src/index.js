@@ -8,9 +8,10 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import { Provider } from 'react-redux';
 import { route } from './reducers/routeReducers';
+import { time } from './reducers/timeReducers';
 
 const logger = createLogger();
-const rootReducers = combineReducers({route});
+const rootReducers = combineReducers({route, time});
 const store = createStore(rootReducers, applyMiddleware(logger));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
