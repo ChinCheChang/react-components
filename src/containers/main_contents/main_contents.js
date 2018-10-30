@@ -19,7 +19,7 @@ class MainContents extends Component{
 
   render() {
     return (
-      <div className="container-fluid relative main_contents">
+      <div className="relative main_contents">
         <Sidenav sidenav={this.state.sidenav} onIconClick={this.onIconClick}/>
         <IconBar />
       </div>
