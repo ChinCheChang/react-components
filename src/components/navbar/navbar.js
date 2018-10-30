@@ -1,5 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './navbar.css';
 
 const Navbar = ({onRouteChange}) => {
@@ -11,7 +10,7 @@ const Navbar = ({onRouteChange}) => {
   return (
     <nav className="justify-content-between navbar fixed-top navbar-expand-lg o-80 shadow-2 navbar-light bg-light" style={{ 'backgroundColor':'#e3f2fd'}}>
       <a onClick={() => onRouteChange('main')} className="navbar-brand grow" href="#">
-        <FontAwesomeIcon icon="ghost" />
+        <i class="fas fa-ghost"></i>
         <span className="ma2">ChinChe</span>
       </a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

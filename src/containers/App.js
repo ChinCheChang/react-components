@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faGhost } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
-
 import './App.css';
 import Navbar from '../components/navbar/navbar';
 import ParallaxScrolling from '../components/parallaxScrolling/parallaxScrolling';
+import Footer from '../components/footer/footer';
 import Signin from './signin/signin';
 import Signup from './signup/signup';
-import Footer from '../components/footer/footer'
-
+import MainContents from './main_contents/main_contents'
 import { setRoute } from '../actions/routeActions';
-
-library.add(faGhost)
 
 const mapStateToProps = (state) => {
   return {
@@ -28,6 +23,8 @@ const mapDispatchToProps = (dispatch) => {
 
 class App extends Component {
   componentDidMount() {
+    //where to add clock
+    var clocklist = document.getElementById('clock');
     const startTime = () => {
       var today = new Date();
       var h = today.getHours();
@@ -35,9 +32,9 @@ class App extends Component {
       var s = today.getSeconds();
       m = checkTime(m);
       s = checkTime(s);
-      document.getElementById('clock').innerHTML =
+      clocklist.innerHTML =
       h + ":" + m + ":" + s;
-      var t = setTimeout(startTime, 500);
+      setTimeout(startTime, 500)
     }
     const checkTime = (i) => {
         if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
@@ -64,6 +61,7 @@ class App extends Component {
           })()
         }
       <ParallaxScrolling />
+      <MainContents />
       <Footer />
       </div>
     );
