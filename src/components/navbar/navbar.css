@@ -1,3 +1,23 @@
+.icon {
+  font-size: 1em;
+  color: orange;
+  -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+  animation: mymove 5s infinite;
+}
+
+@-webkit-keyframes mymove {
+  0% {color: orange;}
+  50% {color: red;}
+  100% {color: orange;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    0% {color: orange;}
+    50% {color: red;}
+    100% {color: orange;}
+}
+
 @media (max-width: 575.98px) {
   .normalviewport {
     display: none;
