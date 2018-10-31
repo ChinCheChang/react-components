@@ -7,10 +7,10 @@ import 'tachyons';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
 import { Provider } from 'react-redux';
-import { route, time, zIndex } from './reducers/reducers';
+import { route, time, zIndex, signin } from './reducers/reducers';
 
 const logger = createLogger();
-const rootReducers = combineReducers({route, time, zIndex});
+const rootReducers = combineReducers({route, time, zIndex, signin});
 const store = createStore(rootReducers);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

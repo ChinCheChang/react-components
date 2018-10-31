@@ -24,23 +24,26 @@ class Signup extends React.Component {
   }
 
   onSubmit = (event) => {
-    fetch('#', {
-      method: 'POST',
-      headers: {'content-type': 'application/json'},
-      body: JSON.stringify({
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.password
-      })
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.id){
-        this.props.updateUser(data);
-        this.props.onRouteChange('main');
-      }
-    })
-    .catch(err => console.log(err));
+    this.props.onRouteChange('main');
+    this.props.onSignin(true);
+
+    // fetch('#', {
+    //   method: 'POST',
+    //   headers: {'content-type': 'application/json'},
+    //   body: JSON.stringify({
+    //     name: this.state.name,
+    //     email: this.state.email,
+    //     password: this.state.password
+    //   })
+    // })
+    // .then(res => res.json())
+    // .then(data => {
+    //   if (data.id){
+    //     this.props.updateUser(data);
+    //     this.props.onRouteChange('main');
+    //   }
+    // })
+    // .catch(err => console.log(err));
   }
 
   render() {

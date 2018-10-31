@@ -1,7 +1,8 @@
 import {
   CHANGE_ROUTE,
   CHANGE_TIME,
-  CHANGE_Z_INDEX
+  CHANGE_Z_INDEX,
+  CHANGE_SIGNIN
 } from '../constants.js';
 
 export const setRoute = (toWhere) => ({
@@ -17,4 +18,9 @@ export const setTime = (time) => ({
 export const setZIndex = (indexs) => ({
   type: CHANGE_Z_INDEX,
   payload: indexs
+})
+
+export const setSignIn = (signinState) => ({
+  type: CHANGE_SIGNIN,
+  payload: signinState
 })

@@ -19,24 +19,26 @@ class Signin extends React.Component{
   }
 
   onSubmitIn = () => {
-    fetch('#', {
-      method: 'POST',
-      headers: {'content-type': 'application/json'},
-      body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword
-      })
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.id){
-        this.props.updateUser(data);
-        this.props.onRouteChange('home');
-      } else {
-        document.getElementsByClassName('ErrorMessage')[0].innerHTML = 'Something wrong!';
-      }
-    })
-    .catch(err => console.log(err));
+    this.props.onSignin(true);
+    this.props.onRouteChange('main');
+    // fetch('#', {
+    //   method: 'POST',
+    //   headers: {'content-type': 'application/json'},
+    //   body: JSON.stringify({
+    //     email: this.state.signInEmail,
+    //     password: this.state.signInPassword
+    //   })
+    // })
+    // .then(res => res.json())
+    // .then(data => {
+    //   if (data.id){
+    //     this.props.updateUser(data);
+    //     this.props.onRouteChange('main');
+    //   } else {
+    //     document.getElementsByClassName('ErrorMessage')[0].innerHTML = 'Something wrong!';
+    //   }
+    // })
+    // .catch(err => console.log(err));
   }
 
   render() {
