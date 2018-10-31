@@ -1,6 +1,7 @@
 import React from 'react';
-import './signin.css'
-// = ({onRouteChange}) => {
+import './signin.css';
+import { ZIndehandler } from '../../functions/zIndexs';
+
 class Signin extends React.Component{
   constructor (props) {
     super(props);
@@ -8,6 +9,10 @@ class Signin extends React.Component{
       signInEmail: '',
       signInPassword: ''
     }
+  }
+
+  componentDidMount() {
+    ZIndehandler(this.props.zIndex);
   }
 
   onEmailChange = (event) => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import './signup.css';
+import { ZIndehandler } from '../../functions/zIndexs'
 
 class Signup extends React.Component {
   constructor(props) {
@@ -9,6 +10,10 @@ class Signup extends React.Component {
       email: '',
       password: ''
     }
+  }
+
+  componentDidMount() {
+    ZIndehandler(this.props.zIndex);
   }
 
   onNameChange = (event) => {

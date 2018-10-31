@@ -43,6 +43,7 @@ export const zIndex = (state = initialZIndex, action = {}) => {
   }
 }
 
+//whether state is singin or not
 const initialSignin = {
   signin: false
 };

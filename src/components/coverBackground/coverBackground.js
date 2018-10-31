@@ -1,12 +1,19 @@
 import React from 'react';
 import './coverBackground.css';
+import { ZIndehandler } from '../../functions/zIndexs';
 
-const CoverBackground = (props) => {
-  return(
-    <div onClick={(e) => e.target === document.getElementById('myModal')
-      ? props.onRouteChange('main')
-      : ''} id="CoverBackground" className="coverBackground">
-      {props.children}
+const CoverBackground = ({ children, onRouteChange}) => {
+  const bgClick = (e) => {
+    if (e.target === document.getElementById('CoverBackground')) {
+      onRouteChange('main');
+    }
+  }
+
+  return (
+    < div onClick = { bgClick }
+    id = "CoverBackground"
+    className = "coverBackground" >
+    { children }
     </div>
   );
 }

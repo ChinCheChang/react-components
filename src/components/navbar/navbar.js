@@ -1,6 +1,6 @@
 import React from 'react';
 import './navbar.css';
-import { time2String, checkTime } from '../../functions/time';
+import { time2String } from '../../functions/time';
 
 const Navbar = ({onRouteChange, now}) => {
   const onSignClick = (text) => {

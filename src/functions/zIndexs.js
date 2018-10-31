@@ -1,8 +1,8 @@
 export const ZIndehandler = (zIndex) => {
-  zIndex.map( (currentValue, index) => {
-    var element = document.getElementById(currentValue);
-    if (element) {
-      element.style.zIndex = index + 2;
-    }
-  }
-)}
+  zIndex.filter((currentValue, index) => {
+    return document.getElementById(currentValue);
+  })
+  .forEach((currentValue, index) => {
+    document.getElementById(currentValue).style.zIndex = index + 2;
+  })
+}

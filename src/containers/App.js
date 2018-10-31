@@ -11,7 +11,7 @@ import Signup from './signup/signup';
 import MainContents from './main_contents/main_contents'
 import { setRoute, setTime, setZIndex, setSignIn } from '../actions/actions';
 import { startTime } from '../functions/time';
-import {ZIndehandler } from '../functions/zIndexs';
+import { ZIndehandler } from '../functions/zIndexs';
 
 
 const mapStateToProps = (state) => {
@@ -35,12 +35,12 @@ const mapDispatchToProps = (dispatch) => {
 class App extends Component {
   componentDidMount() {
     const { onTimeChange, zIndex } = this.props;
-    //startTime(onTimeChange);
+    startTime(onTimeChange);
     ZIndehandler(zIndex);
   }
 
   render() {
-    const { route, onRouteChange, now, onSignin } = this.props;
+    const { route, onRouteChange, now, onSignin, zIndex} = this.props;
     return (
       <div className="App">
         <Navbar now={now} onRouteChange={onRouteChange}/>
@@ -51,13 +51,13 @@ class App extends Component {
               case "signin":
                 return (
                   <CoverBackground onRouteChange={onRouteChange}>
-                    <Signin onSignin={onSignin} onRouteChange={onRouteChange}/>
+                    <Signin onSignin={onSignin} onRouteChange={onRouteChange} zIndex={zIndex}/>
                   </CoverBackground>
                 );
               case "signup":
                 return  (
                   <CoverBackground onRouteChange={onRouteChange}>
-                    <Signup onSignin={onSignin} onRouteChange={onRouteChange}/>
+                    <Signup onSignin={onSignin} onRouteChange={onRouteChange} zIndex={zIndex}/>
                   </CoverBackground>
                 );
               default:
