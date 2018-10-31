@@ -31,7 +31,7 @@ export const time = (state = initailTime, action = {}) => {
 
 //control the layers of elements
 const initialZIndex = {
-  ZIndexs: ["icon-bar", "mySidenav", "navbar", "calendar", "CoverBackground"]
+  ZIndexs: ["icon-bar", "Sidenav", "navbar", "calendar", "CoverBackground"]
 };
 
 export const zIndex = (state = initialZIndex, action = {}) => {

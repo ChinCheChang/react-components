@@ -19,8 +19,8 @@ const Sidenav = ({onIconClick, sidenav}) => {
   }
 
   return (
-  <div id="mySidenav" className="h-100 relative">
-    <div className="br2 sidenav shadow-5">
+  <div id="Sidenav" className="h-100 relative">
+    <div id="mySidenav" className="br2 sidenav shadow-5">
       <a >About</a>
       <a >Services</a>
       <a >Clients</a>
