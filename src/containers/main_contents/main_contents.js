@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './main_contents.css';
 import Sidenav from '../../components/sidenav/sidenav';
-import IconBar from '../../components/iconBar/iconBar';
 
 const initialState = {
   sidenav: "right"
@@ -21,11 +20,9 @@ class MainContents extends Component{
     return (
       <div className="relative main_contents">
         <Sidenav sidenav={this.state.sidenav} onIconClick={this.onIconClick}/>
-        <IconBar />
       </div>
     );
   }
-
 }
 
 export default MainContents;

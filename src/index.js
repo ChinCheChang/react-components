@@ -12,7 +12,7 @@ import { time } from './reducers/timeReducers';
 
 const logger = createLogger();
 const rootReducers = combineReducers({route, time});
-const store = createStore(rootReducers, applyMiddleware(logger));
+const store = createStore(rootReducers);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 serviceWorker.unregister();

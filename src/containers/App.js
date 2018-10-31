@@ -5,6 +5,7 @@ import Navbar from '../components/navbar/navbar';
 import ParallaxScrolling from '../components/parallaxScrolling/parallaxScrolling';
 import CoverBackground from '../components/coverBackground/coverBackground';
 import Footer from '../components/footer/footer';
+import IconBar from '../components/iconBar/iconBar';
 import Signin from './signin/signin';
 import Signup from './signup/signup';
 import MainContents from './main_contents/main_contents'
@@ -44,6 +45,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar now={now} onRouteChange={onRouteChange}/>
+        <IconBar />
         {
           (() => {
             switch (route) {

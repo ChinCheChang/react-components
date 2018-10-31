@@ -6,14 +6,6 @@
     align-items:center;
 }
 
-.calendarIcon {
-  position: absolute;
-  right: 1em;
-  top: 2.5em;
-  font-size: 30px;
-  border-radius: 50%;
-  background-color: white;
-}
 
 .parallax-img {
   position: absolute;
