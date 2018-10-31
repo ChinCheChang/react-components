@@ -5,7 +5,7 @@ const CoverBackground = (props) => {
   return(
     <div onClick={(e) => e.target === document.getElementById('myModal')
       ? props.onRouteChange('main')
-      : ''} id="myModal" className="coverBackground">
+      : ''} id="CoverBackground" className="coverBackground">
       {props.children}
     </div>
   );

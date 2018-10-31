@@ -2,7 +2,6 @@
   height: 100%;
   width: 5px;
   position: absolute;
-  z-index: 1;
   top: 0;
   left: 0;
   background-color: white;
@@ -79,7 +78,6 @@ a.closebtn:hover {
   position: absolute;
   width: 1px;
   height: 100%;
-  z-index: 1;
 }
 
 @media screen and (max-height: 450px) {

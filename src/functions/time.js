@@ -11,3 +11,11 @@ export const checkTime = (i) => {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
+
+export const startTime = (onTimeChange) => {
+  var clock = document.getElementById('clock');
+  var today = new Date();
+  onTimeChange(today);
+  clock.innerHTML = time2String(today);
+  setTimeout(() => startTime(onTimeChange), 500)
+}

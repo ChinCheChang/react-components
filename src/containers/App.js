@@ -9,35 +9,32 @@ import IconBar from '../components/iconBar/iconBar';
 import Signin from './signin/signin';
 import Signup from './signup/signup';
 import MainContents from './main_contents/main_contents'
-import { setRoute, setTime } from '../actions/actions';
-import { time2String, checkTime } from '../functions/time';
+import { setRoute, setTime, setZIndex } from '../actions/actions';
+import { startTime } from '../functions/time';
+import {ZIndehandler } from '../functions/zIndexs';
+
 
 const mapStateToProps = (state) => {
   return {
     route: state.route.route,
-    now: state.time.now
+    now: state.time.now,
+    zIndex: state.zIndex.ZIndexs
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onRouteChange: (toWhere) => dispatch(setRoute(toWhere)),
-    onTimeChange: (today) => dispatch(setTime(today))
+    onTimeChange: (today) => dispatch(setTime(today)),
+    onZIndexChange: (indexs) => dispatch(setZIndex(indexs))
   }
 }
 
 class App extends Component {
   componentDidMount() {
-    const { onTimeChange } = this.props;
-    var clock = document.getElementById('clock');
-
-    const startTime = () => {
-      var today = new Date();
-      onTimeChange(today);
-      clock.innerHTML = time2String(today);
-      setTimeout(startTime, 500)
-    }
-    startTime();
+    const { onTimeChange, zIndex } = this.props;
+    startTime(onTimeChange);
+    ZIndehandler(zIndex);
   }
 
   render() {

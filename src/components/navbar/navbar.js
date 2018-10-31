@@ -10,7 +10,7 @@ const Navbar = ({onRouteChange, now}) => {
   }
 
   return (
-    <nav className="justify-content-between navbar fixed-top navbar-expand-lg o-80 shadow-2 navbar-light bg-light">
+    <nav id="navbar" className="justify-content-between navbar fixed-top navbar-expand-lg o-80 shadow-2 navbar-light bg-light">
       <a onClick={() => onRouteChange('main')} className="navbar-brand grow" href="#">
         <span>
           <i className="fas fa-ghost icon"></i>
