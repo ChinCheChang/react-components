@@ -20,14 +20,14 @@
   position: relative;
   height: 100%;
   width: 80%;
-  padding: 1rem;
+  padding: 0.5rem;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url('./Photo by Chris Lawton on Unsplash.jpg');
   background-size: 100% auto;
-  background-position: top;
+  background-position: center;
   border-radius: 0.3rem;
 }
 
@@ -51,14 +51,14 @@
 }
 
 .month-title {
-  width: inherit;
+  width: 70%;
   background-color: rgba(47.5, 43.9, 29.4, 0.3);
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 0.3rem;
 }
 
 .weekdays {
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   display: flex;
   justify-content: flex-start;

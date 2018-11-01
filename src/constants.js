@@ -2,3 +2,4 @@ export const CHANGE_ROUTE = 'CHANGE_ROUTE';
 export const ADD_CLOCK_LIST = 'ADD_CLOCK_LIST';
 export const CHANGE_Z_INDEX = 'CHANGE_Z_INDEX';
 export const CHANGE_SIGNIN = 'CHANGE_SIGNIN';
+export const CHANGE_CALENDER = 'CHANGE_CALENDER'; 

@@ -2,7 +2,8 @@ import {
   CHANGE_ROUTE,
   ADD_CLOCK_LIST,
   CHANGE_Z_INDEX,
-  CHANGE_SIGNIN
+  CHANGE_SIGNIN,
+  CHANGE_CALENDER
 } from '../constants.js';
 
 //Decide what page it is
@@ -16,8 +17,7 @@ export const route = (state = initailRoute, action = {}) => {
       return state;
   }
 }
-// onAddClockList("clock");
-// onAddClockList("timer");
+
 //get clockList
 const initailClockList = { clockList: [] }
 
@@ -53,6 +53,17 @@ export const signin = (state = initialSignin, action = {}) => {
   switch (action.type) {
     case CHANGE_SIGNIN:
       return {...state, signin: action.payload }
+    default:
+      return state;
+  }
+}
+
+const initialCalendar = { calendar: 'none'}
+
+export const calendar = (state = initialCalendar, action = {}) => {
+  switch (action.type) {
+    case CHANGE_CALENDER:
+      return {...state, calendar: action.payload }
     default:
       return state;
   }

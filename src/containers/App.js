@@ -6,13 +6,17 @@ import ParallaxScrolling from '../components/parallaxScrolling/parallaxScrolling
 import CoverBackground from '../components/coverBackground/coverBackground';
 import Footer from '../components/footer/footer';
 import IconBar from '../components/iconBar/iconBar';
+import SideFixPanel from '../components/sideFixPanel/sideFixPanel';
+import Calendar from '../components/calendar/calendar'
+
+import MainContents from './main_contents/main_contents'
 import Signin from './signin/signin';
 import Signup from './signup/signup';
-import MainContents from './main_contents/main_contents'
-import { setRoute, addClockList, setZIndex, setSignIn } from '../actions/actions';
+
 import { startTime } from '../functions/time';
 import { ZIndehandler } from '../functions/zIndexs';
-import Calendar from '../components/calendar/calendar'
+
+import { setRoute, addClockList, setZIndex, setSignIn, setCalendar } from '../actions/actions';
 
 
 
@@ -21,7 +25,8 @@ const mapStateToProps = (state) => {
     route: state.route.route,
     clockList: state.clockList.clockList,
     zIndex: state.zIndex.ZIndexs,
-    signin: state.signin.signin
+    signin: state.signin.signin,
+    calendar: state.calendar.calendar
   }
 }
 
@@ -30,13 +35,14 @@ const mapDispatchToProps = (dispatch) => {
     onRouteChange: (toWhere) => dispatch(setRoute(toWhere)),
     onAddClockList: (elementName) => dispatch(addClockList(elementName)),
     onZIndexChange: (indexs) => dispatch(setZIndex(indexs)),
-    onSignin: (state) => dispatch(setSignIn(state))
+    onSignin: (state) => dispatch(setSignIn(state)),
+    onCalendarChange: (state) => dispatch(setCalendar(state))
   }
 }
 
 class App extends Component {
   componentDidMount() {
-    const { onTimeChange, zIndex, onAddClockList, } = this.props;
+    const { onTimeChange, zIndex, onAddClockList } = this.props;
     onAddClockList("clock");
     onAddClockList("timer");
     ZIndehandler(zIndex);
@@ -48,7 +54,7 @@ class App extends Component {
   }
 
   route() {
-    const { route, onRouteChange, onSignin, zIndex  } = this.props;
+    const { route, onRouteChange, onSignin, zIndex } = this.props;
     switch (route) {
       case "signin":
         return (
@@ -67,16 +73,27 @@ class App extends Component {
     }
   }
 
+  calendarShow() {
+    const { calendar } = this.props;
+    if ( calendar==="show" ) {
+      return (
+        <SideFixPanel>
+          <Calendar/>
+        </SideFixPanel>
+      );
+    }
+  }
+
   render() {
-    const { onRouteChange } = this.props;
+    const { onRouteChange, onCalendarChange, calendar } = this.props;
     return (
       <div className="App">
         <Navbar onRouteChange={onRouteChange} />
-        <IconBar />
+        <IconBar onCalendarChange={onCalendarChange} calendar={calendar}/>
+        {this.calendarShow()}
         {this.route()}
         <ParallaxScrolling/>
         <MainContents>
-          <Calendar/>
         </MainContents>
         <Footer />
       </div>

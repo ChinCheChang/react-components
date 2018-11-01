@@ -1,0 +1,24 @@
+#SideFixPanel {
+  position: fixed;
+  padding: 0.3rem;
+  top: 3.75rem;
+  right: 0;
+  height: 80%;
+  width: 70%;
+  border-radius: 1rem;
+  background-color: rgba(170, 57, 57,0.5);
+  -webkit-animation-name: animateright;
+  -webkit-animation-duration: 1s;
+  animation-name: animateright;
+  animation-duration: 2s
+}
+
+@-webkit-keyframes animateright {
+  from {width:30%; opacity:0}
+  to {width:70%; opacity:1}
+}
+
+@keyframes animateright {
+  from {width:30%; opacity:0}
+  to {width:70%; opacity:1}
+}

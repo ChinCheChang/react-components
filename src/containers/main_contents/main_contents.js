@@ -18,7 +18,6 @@ class MainContents extends Component{
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="relative main_contents">
         <Sidenav sidenav={this.state.sidenav} onIconClick={this.onIconClick}/>
