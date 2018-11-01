@@ -1,6 +1,7 @@
 import React from 'react';
 import './calendar.css';
 import Days from './days/days';
+import PhotoBy from '../photoby/photoby';
 
 const Calendar = () => {
   const daysHandeler = () => {
@@ -40,14 +41,8 @@ const Calendar = () => {
             );
           })
         }
-        <div className="br-pill pl2 pr2" id='photoby'>
-          <a href='https://unsplash.com/@chrislawton?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge'
-            style={{color: 'white'}}
-            target="_blank"
-            rel="noopener noreferrer">
-            Photo by Chris Lawton on Unsplash
-          </a>
-        </div>
+        <PhotoBy imgHref="https://unsplash.com/@chrislawton?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge"
+        content="Photo by Chris Lawton on Unsplash"/>
       </div>
       <div className="angle grow-large">
         <i className="fas fa-angle-right angle-icon shadow-5" />
