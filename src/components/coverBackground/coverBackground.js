@@ -1,6 +1,5 @@
 import React from 'react';
 import './coverBackground.css';
-import { ZIndehandler } from '../../functions/zIndexs';
 
 const CoverBackground = ({ children, onRouteChange}) => {
   const bgClick = (e) => {
