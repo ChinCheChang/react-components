@@ -1,0 +1,99 @@
+.angle {
+  position: static;
+  font-size: 2rem;
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.month-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+}
+
+.month {
+  position: relative;
+  height: 100%;
+  width: 80%;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./Photo by Chris Lawton on Unsplash.jpg');
+  background-size: 100% auto;
+  background-position: top;
+  border-radius: 0.3rem;
+}
+
+.day-container {
+  width: 14.2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.angle-icon {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border-style: solid;
+  background-color: rgba(0,0,0,0);
+}
+
+.month-title {
+  width: inherit;
+  background-color: rgba(47.5, 43.9, 29.4, 0.3);
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.weekdays {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.days {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  background-color: rgba(47.5, 43.9, 29.4, 0.3);
+}
+
+.dayName {
+  border-color: rgba(255, 111, 0, 1);
+  background-color: rgba(255, 111, 0, 0.5);
+}
+
+.weekend {
+  border-color: #FF4646;
+  background-color: rgba(255, 70, 70, 0.5);
+}
+
+.today {
+  border-color: rgba(248, 235, 18, 0.5);;
+  background-color: rgba(248, 235, 18, 0.5);
+}
+
+#photoby {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  background: black;
+}
