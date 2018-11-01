@@ -35,7 +35,7 @@ const mapDispatchToProps = (dispatch) => {
 class App extends Component {
   componentDidMount() {
     const { onTimeChange, zIndex } = this.props;
-    startTime(onTimeChange);
+    //startTime(onTimeChange);
     ZIndehandler(zIndex);
   }
 
