@@ -2,7 +2,7 @@ import React from 'react';
 import './parallaxScrolling.css';
 import PhotoBy from '../photoby/photoby';
 
-const ParallaxScrolling = () => {
+const ParallaxScrolling = () => {  
   return (
     <div className="parallax">
       <div id="parallax-img" className="parallax-img"></div>

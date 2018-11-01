@@ -1,6 +1,6 @@
 import {
   CHANGE_ROUTE,
-  CHANGE_TIME,
+  ADD_CLOCK_LIST,
   CHANGE_Z_INDEX,
   CHANGE_SIGNIN
 } from '../constants.js';
@@ -16,14 +16,15 @@ export const route = (state = initailRoute, action = {}) => {
       return state;
   }
 }
+// onAddClockList("clock");
+// onAddClockList("timer");
+//get clockList
+const initailClockList = { clockList: [] }
 
-//get time
-const initailTime = { now: new Date() };
-
-export const time = (state = initailTime, action = {}) => {
+export const clockList = (state = initailClockList, action = {}) => {
   switch (action.type) {
-    case CHANGE_TIME:
-      return {...state, now: action.payload }
+    case ADD_CLOCK_LIST:
+      return {...state, clockList: [...state.clockList, action.payload]};
     default:
       return state;
   }

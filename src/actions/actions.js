@@ -1,6 +1,6 @@
 import {
   CHANGE_ROUTE,
-  CHANGE_TIME,
+  ADD_CLOCK_LIST,
   CHANGE_Z_INDEX,
   CHANGE_SIGNIN
 } from '../constants.js';
@@ -10,9 +10,9 @@ export const setRoute = (toWhere) => ({
   payload: toWhere
 })
 
-export const setTime = (time) => ({
-  type: CHANGE_TIME,
-  payload: time
+export const addClockList = (elementName) => ({
+  type: ADD_CLOCK_LIST,
+  payload: elementName
 })
 
 export const setZIndex = (indexs) => ({

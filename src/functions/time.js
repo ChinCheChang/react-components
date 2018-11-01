@@ -12,10 +12,11 @@ export const checkTime = (i) => {
     return i;
 }
 
-export const startTime = (onTimeChange) => {
-  var clock = document.getElementById('clock');
+export const startTime = (clockList) => {
   var today = new Date();
-  onTimeChange(today);
-  clock.innerHTML = time2String(today);
-  setTimeout(() => startTime(onTimeChange), 500)
+  var clockString = time2String(today);
+  clockList.map((value,index) => {
+    document.getElementById(value).innerHTML = clockString;
+  })
+  setTimeout(() => {startTime(clockList)}, 500)
 }
