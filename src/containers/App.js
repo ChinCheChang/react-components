@@ -12,6 +12,8 @@ import MainContents from './main_contents/main_contents'
 import { setRoute, addClockList, setZIndex, setSignIn } from '../actions/actions';
 import { startTime } from '../functions/time';
 import { ZIndehandler } from '../functions/zIndexs';
+import Calendar from '../components/calendar/calendar'
+
 
 
 const mapStateToProps = (state) => {
@@ -45,35 +47,38 @@ class App extends Component {
     startTime(clockList);
   }
 
+  route() {
+    const { route, onRouteChange, onSignin, zIndex  } = this.props;
+    switch (route) {
+      case "signin":
+        return (
+          <CoverBackground onRouteChange={onRouteChange}>
+            <Signin onSignin={onSignin} onRouteChange={onRouteChange} zIndex={zIndex}/>
+          </CoverBackground>
+        );
+      case "signup":
+        return  (
+          <CoverBackground onRouteChange={onRouteChange}>
+            <Signup onSignin={onSignin} onRouteChange={onRouteChange} zIndex={zIndex}/>
+          </CoverBackground>
+        );
+      default:
+        break;
+    }
+  }
+
   render() {
-    const { route, onRouteChange, onSignin, zIndex} = this.props;
+    const { onRouteChange } = this.props;
     return (
       <div className="App">
         <Navbar onRouteChange={onRouteChange} />
         <IconBar />
-        {
-          (() => {
-            switch (route) {
-              case "signin":
-                return (
-                  <CoverBackground onRouteChange={onRouteChange}>
-                    <Signin onSignin={onSignin} onRouteChange={onRouteChange} zIndex={zIndex}/>
-                  </CoverBackground>
-                );
-              case "signup":
-                return  (
-                  <CoverBackground onRouteChange={onRouteChange}>
-                    <Signup onSignin={onSignin} onRouteChange={onRouteChange} zIndex={zIndex}/>
-                  </CoverBackground>
-                );
-              default:
-                break;
-            }
-          })()
-        }
-      <ParallaxScrolling />
-      <MainContents />
-      <Footer />
+        {this.route()}
+        <ParallaxScrolling/>
+        <MainContents>
+          <Calendar/>
+        </MainContents>
+        <Footer />
       </div>
     );
   }
