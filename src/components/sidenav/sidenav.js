@@ -4,8 +4,8 @@ import './sidenav.css';
 const Sidenav = ({onIconClick, sidenav}) => {
   const retateIcon = () => {
     if (sidenav === 'right') {
-      document.getElementById("mySidenav").style.width = "10rem";
-      document.getElementById("main").style.marginLeft = "9.7rem";
+      document.getElementById("mySidenav").style.width = "9rem";
+      document.getElementById("main").style.marginLeft = "8.7rem";
       document.getElementsByClassName("closebtn")[0].classList.add("revers-rotate");
       document.getElementsByClassName("closebtn")[0].classList.remove("rotate");
       onIconClick("left");
