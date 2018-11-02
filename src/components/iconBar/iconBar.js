@@ -5,10 +5,10 @@ const IconBar = ({onCalendarChange, calendar}) => {
   const onCalendarIconClick = (e) => {
     if (calendar==='show') {
       onCalendarChange('none');
-      e.target.style.color = "rgba(0, 0, 0, 1)";
+      e.target.style.backgroundColor = "rgba(0, 0, 0, 0)";      
     } else {
       onCalendarChange('show');
-      e.target.style.color = "rgba(65, 82, 0, 1)";      
+      e.target.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
     }
   }
 
