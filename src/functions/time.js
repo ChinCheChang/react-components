@@ -18,5 +18,5 @@ export const startTime = (clockList) => {
   clockList.map((value,index) => {
     document.getElementById(value).innerHTML = clockString;
   })
-  setTimeout(() => {startTime(clockList)}, 500)
+  setTimeout(() => {startTime(clockList)}, 900)
 }

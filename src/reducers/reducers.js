@@ -32,7 +32,7 @@ export const clockList = (state = initailClockList, action = {}) => {
 
 //control the layers of elements
 const initialZIndex = {
-  ZIndexs: ["icon-bar", "Sidenav", "navbar", "calendar", "CoverBackground"]
+  ZIndexs: ["icon-bar", "Sidenav", "navbar", "carousel", "CoverBackground", "month", "angle"]
 };
 
 export const zIndex = (state = initialZIndex, action = {}) => {
