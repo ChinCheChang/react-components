@@ -22,31 +22,23 @@ const Calendar = () => {
   }
 
   return(
-    <div id="calendar" className="month-container">
-      <div className="angle grow-large">
-        <i className="fas fa-angle-left angle-icon shadow-5" />
-      </div>
-      <div className="month shadow-5 row">
-        <div className="month-title">November<br/>2018<br/></div>
-        {
-          daysHandeler().map(( value, index ) => {
-            return (
-              <div  key={index} className="weekdays">
-                {
-                  value.map(( value, index ) => {
-                    return <Days  key={value} date={value}/>
-                  })
-                }
-              </div>
-            );
-          })
-        }
-        <PhotoBy imgHref="https://unsplash.com/@chrislawton?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge"
-        content="Photo by Chris Lawton on Unsplash"/>
-      </div>
-      <div className="angle grow-large">
-        <i className="fas fa-angle-right angle-icon shadow-5" />
-      </div>
+    <div id="month" className="month shadow-5 row">
+      <div className="month-title">November<br/>2018<br/></div>
+      {
+        daysHandeler().map(( value, index ) => {
+          return (
+            <div  key={index} className="weekdays">
+              {
+                value.map(( value, index ) => {
+                  return <Days  key={value} date={value}/>
+                })
+              }
+            </div>
+          );
+        })
+      }
+      <PhotoBy imgHref="https://unsplash.com/@chrislawton?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge"
+      content="Photo by Chris Lawton on Unsplash"/>
     </div>
   );
 }

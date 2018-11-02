@@ -8,6 +8,7 @@ import Footer from '../components/footer/footer';
 import IconBar from '../components/iconBar/iconBar';
 import SideFixPanel from '../components/sideFixPanel/sideFixPanel';
 import Calendar from '../components/calendar/calendar'
+import Carousel from '../components/Carousel/Carousel'
 
 import MainContents from './main_contents/main_contents'
 import Signin from './signin/signin';
@@ -42,15 +43,15 @@ const mapDispatchToProps = (dispatch) => {
 
 class App extends Component {
   componentDidMount() {
-    const { onTimeChange, zIndex, onAddClockList } = this.props;
+    const { onTimeChange, onAddClockList } = this.props;
     onAddClockList("clock");
     onAddClockList("timer");
-    ZIndehandler(zIndex);
   }
 
   componentDidUpdate() {
-    const { clockList } = this.props;
+    const {  zIndex, clockList } = this.props;
     startTime(clockList);
+    ZIndehandler(zIndex);
   }
 
   route() {
@@ -78,7 +79,11 @@ class App extends Component {
     if ( calendar==="show" ) {
       return (
         <SideFixPanel>
-          <Calendar/>
+          <Carousel>
+            <Calendar/>
+            <Calendar/>
+            <Calendar/>
+          </Carousel>
         </SideFixPanel>
       );
     }

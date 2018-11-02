@@ -1,0 +1,42 @@
+.carousel-container {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  width: 240%;
+  transform: translateX( -50% );
+  height: 98%;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0,0,0,0);
+  overflow: hidden;
+}
+
+.angle {
+  position: absolute;
+  font-size: 2rem;
+  height: 100%;
+  width: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.angle-icon {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border-style: solid;
+  background-color: rgba(0,0,0,0);
+}
+
+.left-icon {
+  left: 28%;
+}
+
+.right-icon {
+  right: 28%;
+}
