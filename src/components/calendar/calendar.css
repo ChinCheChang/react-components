@@ -1,17 +1,18 @@
-.month {
+.calendar {
   position: relative;
   height: 100%;
-  width: 32%;
-  padding: 0.5rem;
+  width: 100%;
+  padding: 1%;
   color: white;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   transition: 0.5s;
   align-items: center;
   background-image: url('./Photo by Chris Lawton on Unsplash.jpg');
   background-size: 100% auto;
   background-position: center;
-  border-radius: 0.3rem;
+  border-radius: 1%;
 }
 
 /* For using flex-start */
@@ -23,9 +24,9 @@
 }
 
 .month-title {
-  width: 70%;
+  width: 80%;
   background-color: rgba(47.5, 43.9, 29.4, 0.3);
-  padding: 0.5rem;
+  padding: 2%;
   border-radius: 0.3rem;
 }
 
@@ -37,8 +38,8 @@
 }
 
 .days {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3em;
+  height: 3em;
   padding: 0.1rem;
   border-radius: 50%;
   display: flex;

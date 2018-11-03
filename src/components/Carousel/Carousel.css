@@ -2,7 +2,7 @@
   position: absolute;
   left: 50%;
   display: flex;
-  width: 240%;
+  width: 100%;
   transform: translateX( -50% );
   height: 98%;
   justify-content: space-around;
@@ -15,7 +15,7 @@
   position: absolute;
   font-size: 2rem;
   height: 100%;
-  width: 7%;
+  width: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,9 +34,18 @@
 }
 
 .left-icon {
-  left: 28%;
+  left: 1%;
 }
 
 .right-icon {
-  right: 28%;
+  right: 1%;
+}
+
+.carousel-content {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

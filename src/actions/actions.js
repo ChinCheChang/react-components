@@ -3,7 +3,8 @@ import {
   ADD_CLOCK_LIST,
   CHANGE_Z_INDEX,
   CHANGE_SIGNIN,
-  CHANGE_CALENDER
+  CHANGE_CALENDER_SHOW,
+  CHANGE_CALENDAR
 } from '../constants.js';
 
 export const setRoute = (toWhere) => ({
@@ -26,7 +27,12 @@ export const setSignIn = (signinState) => ({
   payload: signinState
 })
 
-export const setCalendar = (state) => ({
-  type: CHANGE_CALENDER,
+export const setCalendarShow = (state) => ({
+  type: CHANGE_CALENDER_SHOW,
   payload: state
+})
+
+export const setCalendar = (yearMonth) => ({
+  type: CHANGE_CALENDAR,
+  payload: yearMonth
 })

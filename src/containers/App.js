@@ -17,7 +17,7 @@ import Signup from './signup/signup';
 import { startTime } from '../functions/time';
 import { ZIndehandler } from '../functions/zIndexs';
 
-import { setRoute, addClockList, setZIndex, setSignIn, setCalendar } from '../actions/actions';
+import { setRoute, addClockList, setZIndex, setSignIn, setCalendarShow, setCalendar } from '../actions/actions';
 
 
 
@@ -27,6 +27,7 @@ const mapStateToProps = (state) => {
     clockList: state.clockList.clockList,
     zIndex: state.zIndex.ZIndexs,
     signin: state.signin.signin,
+    calendarShow: state.calendarShow.calendarShow,
     calendar: state.calendar.calendar
   }
 }
@@ -37,7 +38,8 @@ const mapDispatchToProps = (dispatch) => {
     onAddClockList: (elementName) => dispatch(addClockList(elementName)),
     onZIndexChange: (indexs) => dispatch(setZIndex(indexs)),
     onSignin: (state) => dispatch(setSignIn(state)),
-    onCalendarChange: (state) => dispatch(setCalendar(state))
+    onCalendarShowChange: (state) => dispatch(setCalendarShow(state)),
+    onCalenderChange: (month) => dispatch(setCalendar(month))
   }
 }
 
@@ -75,14 +77,12 @@ class App extends Component {
   }
 
   calendarShow() {
-    const { calendar } = this.props;
-    if ( calendar==="show" ) {
+    const { calendarShow, calendar, onCalenderChange } = this.props;
+    if ( calendarShow === "show" ) {
       return (
         <SideFixPanel>
-          <Carousel>
-            <Calendar/>
-            <Calendar/>
-            <Calendar/>
+          <Carousel onCalenderChange={onCalenderChange} calendar={calendar}>
+            <Calendar year={calendar.calendarYear} month={calendar.calendarMonth } />
           </Carousel>
         </SideFixPanel>
       );
@@ -90,15 +90,16 @@ class App extends Component {
   }
 
   render() {
-    const { onRouteChange, onCalendarChange, calendar } = this.props;
+    const { onRouteChange, onCalendarShowChange, calendar, calendarShow } = this.props;
     return (
       <div className="App">
         <Navbar onRouteChange={onRouteChange} />
-        <IconBar onCalendarChange={onCalendarChange} calendar={calendar}/>
+        <IconBar onCalendarShowChange={onCalendarShowChange} calendar={calendarShow}/>
         {this.calendarShow()}
         {this.route()}
         <ParallaxScrolling/>
         <MainContents>
+          <Calendar year={calendar.calendarYear} month={calendar.calendarMonth}/>
         </MainContents>
         <Footer />
       </div>

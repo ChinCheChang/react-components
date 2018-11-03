@@ -3,11 +3,13 @@ import './calendar.css';
 import Days from './days/days';
 import PhotoBy from '../photoby/photoby';
 
-const Calendar = () => {
+const Calendar = ({year ,month }) => {
+  var date = 1;
+  var setDate = new Date(year, month - 1);
+  var months = ['January ','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
   const daysHandeler = () => {
-    var date = 1;
-    var today = new Date();
-    var Maxdays = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+    var Maxdays = new Date(setDate.getFullYear(), setDate.getMonth() + 1, 0).getDate();
     var dayRow = [['Mon','Tue','Wed','Thu','Fri','Sat','Sun']];
     var dayCol = [];
     while ( date <= Maxdays ) {
@@ -22,15 +24,15 @@ const Calendar = () => {
   }
 
   return(
-    <div id="month" className="month shadow-5 row">
-      <div className="month-title">November<br/>2018<br/></div>
+    <div id="calendar" className="calendar shadow-5">
+      <div className="month-title">{months[month - 1]}<br/>{setDate.getFullYear()}<br/></div>
       {
         daysHandeler().map(( value, index ) => {
           return (
             <div  key={index} className="weekdays">
               {
                 value.map(( value, index ) => {
-                  return <Days  key={value} date={value}/>
+                  return <Days  key={value} date={value} month={month} year={year}/>
                 })
               }
             </div>

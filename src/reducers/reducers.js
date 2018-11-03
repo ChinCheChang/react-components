@@ -3,7 +3,8 @@ import {
   ADD_CLOCK_LIST,
   CHANGE_Z_INDEX,
   CHANGE_SIGNIN,
-  CHANGE_CALENDER
+  CHANGE_CALENDER_SHOW,
+  CHANGE_CALENDAR
 } from '../constants.js';
 
 //Decide what page it is
@@ -32,7 +33,7 @@ export const clockList = (state = initailClockList, action = {}) => {
 
 //control the layers of elements
 const initialZIndex = {
-  ZIndexs: ["icon-bar", "Sidenav", "navbar", "carousel", "CoverBackground", "calendar", "angle"]
+  ZIndexs: ["icon-bar", "Sidenav", "SideFixPanel", "navbar", "carousel", "CoverBackground"]
 };
 
 export const zIndex = (state = initialZIndex, action = {}) => {
@@ -58,11 +59,27 @@ export const signin = (state = initialSignin, action = {}) => {
   }
 }
 
-const initialCalendar = { calendar: 'none'}
+const initialCalendarShow = { calendarShow: 'none'}
+
+export const calendarShow = (state = initialCalendarShow, action = {}) => {
+  switch (action.type) {
+    case CHANGE_CALENDER_SHOW:
+      return {...state, calendarShow: action.payload }
+    default:
+      return state;
+  }
+}
+
+const initialCalendar = {
+  calendar: {
+    calendarYear: new Date().getFullYear(),
+    calendarMonth: new Date().getMonth() + 1
+  }
+}
 
 export const calendar = (state = initialCalendar, action = {}) => {
   switch (action.type) {
-    case CHANGE_CALENDER:
+    case CHANGE_CALENDAR:
       return {...state, calendar: action.payload }
     default:
       return state;

@@ -1,10 +1,10 @@
 import React from 'react';
 import '../calendar.css';
 
-const Days = ({date}) => {
+const Days = ({date, month, year}) => {
   const weekendOrNot = () => {
-    var today  = new Date().getDate();
-    if ( today === date ) {
+    var today = new Date();
+    if (today.getFullYear() === year && today.getMonth() + 1 === month && today.getDate() === date ) {
       return <div className="days grow-large today">{date}</div>;
     } else if ( date%7===0 || date%7===6 ) {
       return <div className="days grow-large weekend">{date}</div>;
