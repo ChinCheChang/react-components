@@ -3,7 +3,7 @@ import './sideFixPanel.css'
 
 const SideFixPanel = ({children}) => {
   return(
-    <div id="SideFixPanel">
+    <div id="SideFixPanel" className="SideFixPanel">
       {children}
     </div>
   );
