@@ -21,10 +21,8 @@ const Sidenav = ({onIconClick, sidenav}) => {
   return (
   <div id="Sidenav" className="h-100 sidenav-container Sidenav">
     <div id="mySidenav" className="br2 sidenav shadow-5">
-      <a >About</a>
-      <a >Services</a>
-      <a >Clients</a>
-      <a >Contact</a>
+      <a className="grow-large">About</a>
+      <a className="grow-large">gallery</a>
     </div>
     <div id="main" className="br--right shadow-5 bg-white closeContainer">
       <i className="fas fa-angle-left rotate closebtn " onClick={retateIcon}></i>

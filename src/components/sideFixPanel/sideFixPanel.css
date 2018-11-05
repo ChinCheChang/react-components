@@ -1,10 +1,11 @@
 #SideFixPanel {
   position: fixed;
   padding: 0.3rem 0;
-  top: 3.75rem;
-  right: 10%;
+  min-width: 23rem;
+  top: 10vh;
+  right: 0;
   height: 90%;
-  width: 80vw;
+  width: 60vw;
   border-radius: 0.5rem;
   background-color: rgba(170, 57, 57,0.5);
   -webkit-animation-name: animateright;
@@ -16,10 +17,10 @@
 
 @-webkit-keyframes animateright {
   from {right:-70%; opacity:0}
-  to {right:10%; opacity:1}
+  to {right:0%; opacity:1}
 }
 
 @keyframes animateright {
   from {right:-70%; opacity:0}
-  to {right:10%; opacity:1}
+  to {right:0%; opacity:1}
 }

@@ -14,7 +14,7 @@ const Carousel = ({children, onCalenderChange, calendar}) => {
         calendarYear: calendar.calendarYear,
         calendarMonth: calendar.calendarMonth - 1
       })
-    }    
+    }
   }
 
   const onClickRight = () => {

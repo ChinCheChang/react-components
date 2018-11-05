@@ -7,8 +7,12 @@ import CoverBackground from '../components/coverBackground/coverBackground';
 import Footer from '../components/footer/footer';
 import IconBar from '../components/iconBar/iconBar';
 import SideFixPanel from '../components/sideFixPanel/sideFixPanel';
-import Calendar from '../components/calendar/calendar'
-import Carousel from '../components/Carousel/Carousel'
+import Calendar from '../components/calendar/calendar';
+import Carousel from '../components/Carousel/Carousel';
+import Card from '../components/Card/Card';
+import CardList from '../components/CardList/CardList';
+import SearchBox from '../components/SearchBox/SearchBox';
+
 
 import MainContents from './main_contents/main_contents'
 import Signin from './signin/signin';
@@ -18,6 +22,7 @@ import { startTime } from '../functions/time';
 import { ZIndehandler } from '../functions/zIndexs';
 
 import { setRoute, addClockList, setZIndex, setSignIn, setCalendarShow, setCalendar } from '../actions/actions';
+import { setSearchField,requestRobots } from '../actions/robotsActions';
 
 
 
@@ -28,7 +33,11 @@ const mapStateToProps = (state) => {
     zIndex: state.zIndex.ZIndexs,
     signin: state.signin.signin,
     calendarShow: state.calendarShow.calendarShow,
-    calendar: state.calendar.calendar
+    calendar: state.calendar.calendar,
+    searchField: state.searchRobots.searchField,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error
   }
 }
 
@@ -39,13 +48,16 @@ const mapDispatchToProps = (dispatch) => {
     onZIndexChange: (indexs) => dispatch(setZIndex(indexs)),
     onSignin: (state) => dispatch(setSignIn(state)),
     onCalendarShowChange: (state) => dispatch(setCalendarShow(state)),
-    onCalenderChange: (month) => dispatch(setCalendar(month))
+    onCalenderChange: (month) => dispatch(setCalendar(month)),
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+    onRequestRobots: () => dispatch(requestRobots())
   }
 }
 
 class App extends Component {
   componentDidMount() {
-    const { onTimeChange, onAddClockList } = this.props;
+    const { onAddClockList, onRequestRobots } = this.props;
+    onRequestRobots();
     onAddClockList("clock");
     onAddClockList("timer");
   }
@@ -91,6 +103,11 @@ class App extends Component {
 
   render() {
     const { onRouteChange, onCalendarShowChange, calendar, calendarShow } = this.props;
+    const { searchField, onSearchChange, robots, isPending } = this.props;
+    const filteredRobots = robots.filter((robot) => {
+      return robot.name.toLowerCase().includes(searchField.toLowerCase());
+    })
+
     return (
       <div className="App">
         <Navbar onRouteChange={onRouteChange} />
@@ -99,7 +116,14 @@ class App extends Component {
         {this.route()}
         <ParallaxScrolling/>
         <MainContents>
-          <Calendar year={calendar.calendarYear} month={calendar.calendarMonth}/>
+          <div className="container main_contents_panel">
+            <Calendar year={calendar.calendarYear} month={calendar.calendarMonth}/>
+          </div>
+          <hr/>
+          <SearchBox searchChange={onSearchChange}/>
+          <div className="container main_contents_panel">
+            <CardList robots={filteredRobots}/>
+          </div>
         </MainContents>
         <Footer />
       </div>

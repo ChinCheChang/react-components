@@ -2,6 +2,7 @@
   position: relative;
   height: 100%;
   width: 100%;
+  max-width: 100vh;
   padding: 1%;
   color: white;
   display: flex;
@@ -14,6 +15,17 @@
   background-position: center;
   border-radius: 1%;
 }
+
+@-webkit-keyframes animationAppear {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes animationAppear {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
 
 /* For using flex-start */
 .day-container {
@@ -38,8 +50,8 @@
 }
 
 .days {
-  width: 3em;
-  height: 3em;
+  width: 3rem;
+  height: 3rem;
   padding: 0.1rem;
   border-radius: 50%;
   display: flex;
@@ -47,6 +59,10 @@
   align-items: center;
   border-style: solid;
   background-color: rgba(47.5, 43.9, 29.4, 0.3);
+  -webkit-animation-name: animationAppear;
+  -webkit-animation-duration: 1s;
+  animation-name: animationAppear;
+  animation-duration: 1s;
 }
 
 /* Customized the different day components */

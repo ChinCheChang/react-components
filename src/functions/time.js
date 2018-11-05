@@ -17,6 +17,7 @@ export const startTime = (clockList) => {
   var clockString = time2String(today);
   clockList.map((value,index) => {
     document.getElementById(value).innerHTML = clockString;
+    return value + 'success';
   })
   setTimeout(() => {startTime(clockList)}, 900)
 }

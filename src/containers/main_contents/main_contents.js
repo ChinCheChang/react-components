@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import './main_contents.css';
 import Sidenav from '../../components/sidenav/sidenav';
+import { connect } from 'react-redux';
+import {  } from '../../actions/actions';
 
+
+const mapStateToProps = (state) => {
+  return {
+
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+  }
+}
 
 const initialState = {
   sidenav: "right"
@@ -27,4 +41,4 @@ class MainContents extends Component{
   }
 }
 
-export default MainContents;
+export default connect(mapStateToProps, mapDispatchToProps)(MainContents);
