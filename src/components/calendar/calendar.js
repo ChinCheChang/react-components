@@ -4,18 +4,20 @@ import Days from './days/days';
 import PhotoBy from '../photoby/photoby';
 
 const Calendar = ({year ,month }) => {
-  var date = 1;
-  var setDate = new Date(year, month - 1);
+
+
   var months = ['January ','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   var week = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  var setDate = new Date(year, month - 1);
+  var date = 2 - setDate.getDay();
+
   const daysHandeler = () => {
     var Maxdays = new Date(setDate.getFullYear(), setDate.getMonth() + 1, 0).getDate();
-    // console.log(setDate.getDay());
     var dayRow = [week];
     var dayCol = [];
     while ( date <= Maxdays ) {
       dayCol.push( date );
-      if( date%7 === 0 || date === Maxdays) {
+      if( dayCol.length%7 === 0 || date === Maxdays) {
         dayRow.push(dayCol);
         dayCol = [];
       }
@@ -33,7 +35,7 @@ const Calendar = ({year ,month }) => {
             <div  key={index} className="weekdays">
               {
                 value.map(( value, index ) => {
-                  return <Days  key={value} date={value} month={month} year={year}/>
+                  return <Days  key={value} date={value} month={month} year={year} index={index}/>
                 })
               }
             </div>
