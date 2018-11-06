@@ -5,7 +5,7 @@ import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { createLogger } from 'redux-logger';
+// import { createLogger } from 'redux-logger';
 import { Provider } from 'react-redux';
 import { route, clockList, zIndex, signin, calendarShow, calendar } from './reducers/reducers';
 import { searchRobots, requestRobots } from './reducers/robotsReducers';
