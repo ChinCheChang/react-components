@@ -11,9 +11,9 @@ import { route, clockList, zIndex, signin, calendarShow, calendar } from './redu
 import { searchRobots, requestRobots } from './reducers/robotsReducers';
 import thunkMiddleware from 'redux-thunk';
 
-const logger = createLogger();
+// const logger = createLogger();
 const rootReducers = combineReducers({route, clockList, zIndex, signin, calendarShow, calendar, searchRobots, requestRobots});
-const store = createStore(rootReducers, applyMiddleware(thunkMiddleware, logger));
+const store = createStore(rootReducers, applyMiddleware(thunkMiddleware));
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 serviceWorker.unregister();
