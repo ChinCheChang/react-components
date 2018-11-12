@@ -26,3 +26,6 @@ This is the web that demo my components, and for testing some code
 1. clone this repo
 2. npm install
 3. npm start (You would need [npm install -g create-react-app] for testing)
+
+## detail
+[web record](https://hackmd.io/avs1R8ULStOlw4pTiNUZRg?both)
