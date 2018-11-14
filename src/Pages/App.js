@@ -12,10 +12,9 @@ import Carousel from '../components/UIs/Carousel/Carousel';
 import CardList from '../components/CardList/CardList';
 import SearchBox from '../components/SearchBox/SearchBox';
 
-
-import MainContents from './main_contents/main_contents'
-import Signin from './signin/signin';
-import Signup from './signup/signup';
+import MainContents from '../components/main_contents/main_contents'
+import Signin from '../components/signin/signin';
+import Signup from '../components/signup/signup';
 
 import { startTime } from '../functions/time';
 import { ZIndehandler } from '../functions/zIndexs';
