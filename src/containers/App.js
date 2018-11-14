@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import './App.css';
 import Navbar from '../components/navbar/navbar';
 import ParallaxScrolling from '../components/parallaxScrolling/parallaxScrolling';
-import CoverBackground from '../components/coverBackground/coverBackground';
+import CoverBackground from '../components/UIs/coverBackground/coverBackground';
 import Footer from '../components/footer/footer';
 import IconBar from '../components/iconBar/iconBar';
-import SideFixPanel from '../components/sideFixPanel/sideFixPanel';
+import SideFixPanel from '../components/UIs/sideFixPanel/sideFixPanel';
 import Calendar from '../components/calendar/calendar';
-import Carousel from '../components/Carousel/Carousel';
-import Card from '../components/Card/Card';
+import Carousel from '../components/UIs/Carousel/Carousel';
 import CardList from '../components/CardList/CardList';
 import SearchBox from '../components/SearchBox/SearchBox';
 
@@ -103,7 +102,7 @@ class App extends Component {
 
   render() {
     const { onRouteChange, onCalendarShowChange, calendar, calendarShow } = this.props;
-    const { searchField, onSearchChange, robots, isPending } = this.props;
+    const { searchField, onSearchChange, robots } = this.props;
     const filteredRobots = robots.filter((robot) => {
       return robot.name.toLowerCase().includes(searchField.toLowerCase());
     })

@@ -7,7 +7,7 @@ import {  } from '../../actions/actions';
 
 const mapStateToProps = (state) => {
   return {
-
+    
   }
 }
 
